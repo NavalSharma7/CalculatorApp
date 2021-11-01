@@ -93,5 +93,27 @@ namespace CalculatorTest
         }
         //unit test methods for division.
 
+        [TestMethod]
+        public void DivideMethodMustDivide()
+        {
+            var result = Calculator.Divide(10, 2);
+            Assert.AreEqual(5, result);
+
+        }
+
+
+        [DataTestMethod]
+        [DataRow(-1, -2, 0.5)]
+        [DataRow(-12, -24, 0.5)]
+        [DataRow(-120, -180, 0.67)]
+        [DataRow(-1.5, -2.5, 0.6)]
+
+        public void DivideTwoNegativeNumbers(double num1, double num2, double expected)
+        {
+            var result = Calculator.Divide(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+
     }
 }

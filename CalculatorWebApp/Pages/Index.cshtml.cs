@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using CalculatorLibrary;
 
 namespace CalculatorWebApp.Pages
 {
@@ -19,6 +15,14 @@ namespace CalculatorWebApp.Pages
 
         public void OnGet()
         {
+
+        }
+
+        public void OnPost()
+        {
+           // call the method according to the radio button selected.
+
+            // and show the result in the result input.
 
         }
     }
