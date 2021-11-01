@@ -35,6 +35,7 @@ namespace CalculatorAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+              
             }
 
             app.UseHttpsRedirection();

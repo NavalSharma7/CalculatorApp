@@ -5,9 +5,14 @@
 }
 
     <form method="post">
-        <div><input type="number" name="num1" /></div>
-        <div><input type="number" name="num2" /></div>
-        <div><input type ="number" name="result" /></div>
+        <div><input type="number" name="num1" id="num1"/></div>
+        <div><input type="number" name="num2" id="num2"/></div>
         <div> <input type="submit" /></div>
-        
+       
     </form>
+
+
+@if (ViewData["result"] != null) {
+
+    <output id="result">@ViewData["result"]</output>
+}

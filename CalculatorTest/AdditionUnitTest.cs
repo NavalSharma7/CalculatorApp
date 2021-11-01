@@ -17,6 +17,18 @@ namespace CalculatorTest
 
         }
 
+        [DataTestMethod]
+        [DataRow(1, 2, 3)]
+        [DataRow(11, 24, 35)]
+        [DataRow(120, 180, 300)]
+        [DataRow(1.33, 2.33, 3.66)]
+
+        public void AddTwoPositiveNumbers(double num1, double num2, double expected)
+        {
+            var result = Calculator.Add(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
 
         [DataTestMethod]
         [DataRow(-1,-2,-3)]
@@ -35,38 +47,30 @@ namespace CalculatorTest
         [DataRow(-1, 3, 2)]
         [DataRow(-11, 24, 13)]
         [DataRow(-120, 80, -40)]
-        [DataRow(-1.3, 2.9, 1.6)]
+        [DataRow(-1.30, 2.90, 1.60)]
 
-        public void AddNegativeAndPositiveNumbers(double num1, double num2, double expected)
+        public void AddFirstNegativeAndSecondPositiveNumber(double num1, double num2, double expected)
+        {
+            var result = Calculator.Add(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+        [DataTestMethod]
+        [DataRow(1, -3, -2)]
+        [DataRow(14, -33, -19)]
+        [DataRow(551, -300, 251)]
+
+        public void AddFirstPositiveAndSecondNegativeNumber(double num1, double num2, double expected)
         {
             var result = Calculator.Add(num1, num2);
             Assert.AreEqual(expected, result);
 
         }
 
-        //unit test methods for subtraction.
-
-        [TestMethod]
-        public void SubtractMethodMustSubtract()
-        {
-            var result = Calculator.Subtract(2, 1);
-            Assert.AreEqual(1, result);
-
-        }
 
 
-        [DataTestMethod]
-        [DataRow(-1, -2, 1)]
-        [DataRow(-11, -24, 13)]
-        [DataRow(-120, -180, 60)]
-        [DataRow(-1.33, -2.33, 1)]
 
-        public void SubtractTwoNegativeNumbers(double num1, double num2, double expected)
-        {
-            var result = Calculator.Subtract(num1, num2);
-            Assert.AreEqual(expected, result);
-
-        }
+       
 
         //unit test methods for multiplication.
 
@@ -118,7 +122,7 @@ namespace CalculatorTest
         [DataTestMethod]
         [DataRow(-1, 0, -1)]
         [DataRow(0, 24, -1)]
-        [DataRow(0, 0, 0)]
+        [DataRow(0, 0, -1)]
         public void DivideWithZero(double num1, double num2, double expected) {
             var result = Calculator.Divide(num1, num2);
             Assert.AreEqual(expected, result);
