@@ -115,5 +115,14 @@ namespace CalculatorTest
 
         }
 
+        [DataTestMethod]
+        [DataRow(-1, 0, -1)]
+        [DataRow(0, 24, -1)]
+        [DataRow(0, 0, 0)]
+        public void DivideWithZero(double num1, double num2, double expected) {
+            var result = Calculator.Divide(num1, num2);
+            Assert.AreEqual(expected, result);
+        }
+
     }
 }
