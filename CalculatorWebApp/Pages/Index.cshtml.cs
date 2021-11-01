@@ -19,14 +19,31 @@ namespace CalculatorWebApp.Pages
 
         }
 
-        public void OnPost([FromForm]double num1,[FromForm] double num2)
+        public void OnPost([FromForm] double num1, [FromForm] double num2, [FromForm] string operation)
         {
-            // call the method according to the radio button selected.
-
-            
-            ViewData["result"] = CalculatorLibrary.Calculator.Add(num1, num2);
-
+            // call the method according to the radio button operation selected.
             // and show the result in the result input.
+
+            if (operation.Equals("Add")) { 
+
+            ViewData["result"] = CalculatorLibrary.Calculator.Add(num1, num2);
+            }
+            else if(operation.Equals("Subtract")) {
+
+                ViewData["result"] = CalculatorLibrary.Calculator.Add(num1, num2);
+            }
+            else if (operation.Equals("Multiply"))
+            {
+
+                ViewData["result"] = CalculatorLibrary.Calculator.Add(num1, num2);
+            }
+            else if (operation.Equals("Divide"))
+            {
+
+                ViewData["result"] = CalculatorLibrary.Calculator.Add(num1, num2);
+            }
+
+
 
 
 

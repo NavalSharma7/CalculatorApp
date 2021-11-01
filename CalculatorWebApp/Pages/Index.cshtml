@@ -4,12 +4,25 @@
     ViewData["Title"] = "Home page";
 }
 
-    <form method="post">
-        <div><input type="number" name="num1" id="num1"/></div>
-        <div><input type="number" name="num2" id="num2"/></div>
-        <div> <input type="submit" /></div>
-       
-    </form>
+<form method="post">
+    <div><input type="number" name="num1" id="num1" /></div>
+    <div><input type="number" name="num2" id="num2" /></div>
+
+    <div>
+        <input type="radio" name="operation" value="Add" checked="checked" />Addition
+    </div>
+
+    <div>
+        <input type="radio" name="operation" value="Subtract" />Subtraction
+    </div>
+    <div>
+        <input type="radio" name="operation" value="Divide" />Division
+    </div>
+    <div>
+        <input type="radio" name="operation" value="Multiply" />Multiplication
+    </div>
+    <div> <input type="submit" /></div>
+</form>
 
 
 @if (ViewData["result"] != null) {
