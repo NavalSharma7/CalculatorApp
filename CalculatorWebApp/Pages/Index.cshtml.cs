@@ -26,26 +26,22 @@ namespace CalculatorWebApp.Pages
 
             if (operation.Equals("Add")) { 
 
-            ViewData["result"] = CalculatorLibrary.Calculator.Add(num1, num2);
+            ViewData["result"] = Calculator.Add(num1, num2);
             }
             else if(operation.Equals("Subtract")) {
 
-                ViewData["result"] = CalculatorLibrary.Calculator.Subtract(num1, num2);
+                ViewData["result"] = Calculator.Subtract(num1, num2);
             }
             else if (operation.Equals("Multiply"))
             {
 
-                ViewData["result"] = CalculatorLibrary.Calculator.Multiply(num1, num2);
+                ViewData["result"] = Calculator.Multiply(num1, num2);
             }
             else if (operation.Equals("Divide"))
             {
 
-                ViewData["result"] = CalculatorLibrary.Calculator.Divide(num1, num2);
+                ViewData["result"] = Calculator.Divide(num1, num2);
             }
-
-
-
-
 
         }
     }
