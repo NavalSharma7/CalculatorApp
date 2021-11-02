@@ -21,7 +21,7 @@ namespace UnitTest
         [DataRow(11, 2, 9)]
         [DataRow(40, 24, 16)]
         [DataRow(20, 100, -80)]
-        [DataRow(2.33, 1.33, 1.00)]
+       
 
         public void SubtractTwoPositiveNumbers(double num1, double num2, double expected)
         {
@@ -34,7 +34,7 @@ namespace UnitTest
         [DataRow(-1, -2, 1)]
         [DataRow(-11, -24, 13)]
         [DataRow(-120, -180, 60)]
-        [DataRow(-1.33, -2.33, 1)]
+      
 
         public void SubtractTwoNegativeNumbers(double num1, double num2, double expected)
         {
@@ -47,7 +47,7 @@ namespace UnitTest
         [DataRow(-1, 3, -4)]
         [DataRow(-11, 24, -35)]
         [DataRow(-120, 80, -200)]
-        [DataRow(-1.30, 2.30,-3.60 )]
+      
 
         public void SubtractFirstNegativeAndSecondPositiveNumber(double num1, double num2, double expected)
         {
@@ -67,8 +67,29 @@ namespace UnitTest
 
         }
 
-         
 
-       
+        [DataTestMethod]
+        [DataRow(2, -1.7, 3.70)]
+        [DataRow(14, 3.0, 11.00)]
+        [DataRow(50, 35.6, 14.40)]
+
+        public void SubtractFirstIntegerAndSecondDecimalNumber(int num1, double num2, double expected)
+        {
+            var result = Calculator.Subtract(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+        [DataTestMethod]
+        [DataRow(2.0, -2, 4.00)]
+        [DataRow(12.5, 3, 9.50)]
+        [DataRow(11.10, 3, 8.10)]
+
+        public void SubtractFirstDecimalAndSecondIntegerNumber(double num1, int num2, double expected)
+        {
+            var result = Calculator.Subtract(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+
     }
 }

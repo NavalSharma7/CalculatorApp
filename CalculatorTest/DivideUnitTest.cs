@@ -3,6 +3,7 @@ using CalculatorLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTest
 {
+    [TestClass]
     public class DivideUnitTest
     {
         //unit test methods for division.
@@ -61,6 +62,29 @@ namespace UnitTest
         [DataRow(150, -30, -5)]
 
         public void DivideFirstPositiveAndSecondNegativeNumber(double num1, double num2, double expected)
+        {
+            var result = Calculator.Divide(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+
+        [DataTestMethod]
+        [DataRow(200, -0.5, -400.00)]
+        [DataRow(14, 2.0, 7.00)]
+        [DataRow(50, 20.0, 2.50)]
+
+        public void DivideFirstIntegerAndSecondDecimalNumber(int num1, double num2, double expected)
+        {
+            var result = Calculator.Divide(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+        [DataTestMethod]
+        [DataRow(21.0, -3, -7.00)]
+        [DataRow(21.6, 3, 7.20)]
+        [DataRow(33.33, 3, 11.11)]
+
+        public void DivideFirstDecimalAndSecondIntegerNumber(double num1, int num2, double expected)
         {
             var result = Calculator.Divide(num1, num2);
             Assert.AreEqual(expected, result);
