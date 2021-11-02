@@ -22,7 +22,7 @@ namespace IntegrationTest
 
 
         [TestMethod]
-        public void TestThatAPICanAdd()
+        public void TestThatAPPCanAdd()
         {
             _driver.Navigate().GoToUrl("https://localhost:5001/");
             var number1 = _driver.FindElement(By.CssSelector("input[name=num1]"));
@@ -40,7 +40,7 @@ namespace IntegrationTest
         }
 
         [TestMethod]
-        public void TestThatAPICanSubtract()
+        public void TestThatAPPCanSubtract()
         {
             _driver.Navigate().GoToUrl("https://localhost:5001/");
             var number1 = _driver.FindElement(By.CssSelector("input[name=num1]"));
@@ -59,7 +59,7 @@ namespace IntegrationTest
         }
 
         [TestMethod]
-        public void TestThatAPICanMultiply()
+        public void TestThatAPPCanMultiply()
         {
             _driver.Navigate().GoToUrl("https://localhost:5001/");
             var number1 = _driver.FindElement(By.CssSelector("input[name=num1]"));
@@ -79,7 +79,7 @@ namespace IntegrationTest
 
 
         [TestMethod]
-        public void TestThatAPICanDivide()
+        public void TestThatAPPCanDivide()
         {
             _driver.Navigate().GoToUrl("https://localhost:5001/");
             var number1 = _driver.FindElement(By.CssSelector("input[name=num1]"));

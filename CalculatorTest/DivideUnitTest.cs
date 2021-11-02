@@ -16,13 +16,51 @@ namespace UnitTest
         }
 
 
+
         [DataTestMethod]
-        [DataRow(-1, -2, 0.5)]
-        [DataRow(-12, -24, 0.5)]
-        [DataRow(-120, -180, 0.67)]
-        [DataRow(-1.5, -2.5, 0.6)]
+        [DataRow(12, 2, 6)]
+        [DataRow(40, 4, 10)]
+        [DataRow(20, 1, 20)]
+        [DataRow(2.66, 2, 1.33)]
+
+        public void DivideTwoPositiveNumbers(double num1, double num2, double expected)
+        {
+            var result = Calculator.Divide(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+
+        [DataTestMethod]
+        [DataRow(-2, -1, 2)]
+        [DataRow(-12, -2, 6)]
+        [DataRow(-120, -10, 12)]
+        [DataRow(-2.66, -2, 1.33)]
 
         public void DivideTwoNegativeNumbers(double num1, double num2, double expected)
+        {
+            var result = Calculator.Divide(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+
+        [DataTestMethod]
+        [DataRow(-6, 3, -2)]
+        [DataRow(-12, 2, -6)]
+        [DataRow(-120, 4, -30)]
+        [DataRow(-1.80, 2.0, -0.90)]
+
+        public void DivideFirstNegativeAndSecondPositiveNumber(double num1, double num2, double expected)
+        {
+            var result = Calculator.Divide(num1, num2);
+            Assert.AreEqual(expected, result);
+
+        }
+        [DataTestMethod]
+        [DataRow(10, -2, -5)]
+        [DataRow(15, -3, -5)]
+        [DataRow(150, -30, -5)]
+
+        public void DivideFirstPositiveAndSecondNegativeNumber(double num1, double num2, double expected)
         {
             var result = Calculator.Divide(num1, num2);
             Assert.AreEqual(expected, result);
