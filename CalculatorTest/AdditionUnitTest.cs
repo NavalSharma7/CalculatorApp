@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CalculatorLibrary;
 
-namespace CalculatorTest
+namespace UnitTest
 {
     [TestClass]
     public class AdditionUnitTest
